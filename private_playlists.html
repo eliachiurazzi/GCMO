@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <link rel="stylesheet" href="css/style.css">    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Private Playlists</title>
+    <link rel="icon" href="img/title_logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head> 
+<body onload="load_playlist()" style ="background-color: #d1ffea">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="homepage.html"><img id="logo_navbar" src="img/gcmo_nav.png"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="homepage.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Playlists
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Private Playlists</a></li>
+              <li><a class="dropdown-item" href="public_playlists.html">Public Playlists</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="my_account.html">My Account</a>
+          </li>
+        </ul>
+        <span style="margin-left: 30px;"><button onclick="logout()"type="button" class="btn btn-danger">Log out</button></span>
+      </div>
+    </div>
+  </nav>
+  <div class="center">
+    <p class="welcome_msg">Gestisci le tue playlist private</p>
+  </div>
+  <div class="center-wide">
+      <h3 id="playlist_title">Le mie playlist private</h3>
+      <br>
+    <table class="table table-striped">
+        <thead style="border-color:black">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titolo</th>
+            <th scope="col">Tags</th>
+            <th scope="col">Brani</th>
+          </tr>
+        </thead>
+        <tbody id="tabella" class="table-group-divider">
+          
+        </tbody>
+      </table>
+      <br>
+      <div style="margin-bottom: 20px;" class="accordion" id="accordionExample">
+        <div style=" border-color: black;" class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button  style="background-color: rgb(149, 207, 190)" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                &#8853 Crea nuova playlist
+            </button>
+          </h2>
+          <div style="margin-left: 20px; margin-right: 20px;" id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <form action="/home/melias/Scrivania/GCMO/private_playlists.html" onsubmit="create_playlist()">
+                <br>
+                <div id="error_alert"class="alert alert-danger" role="alert" style="display:none">
+                </div>
+            <div class="input-group mb-3">
+                <input id="titolo" type="text" class="form-control" placeholder="Titolo" aria-label="Title" aria-describedby="basic-addon1" required>
+                <span class="input-group-text" id="basic-addon1">#</span>
+                <input id="tags_form" type="text" class="form-control" placeholder="Tags" aria-label="Tags" aria-describedby="basic-addon1" required>
+              </div>
+              <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" required></textarea>
+                <label for="floatingTextarea2">Descrizione Testuale</label>
+              </div>
+              <br>
+              <button onclick="check_inputs(event)" style="margin-bottom: 20px;" class="btn btn-primary" type="submit">Crea</button>
+              <br>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="js/private_playlists.js"></script>
+  </body>
+</html>
+
+
+
+
+
+<!----Un utente, una volta registrato, può collegarsi all’applicazione
+e creare/modificare/cancellare liste musicali contententi un elenco di
+canzoni. L’elenco delle canzoni viene acquisito tramite le API REST
+del portale Spotify (https://developer.spotify.com/documentation/
+web-api/reference). Per ogni canzone dovranno essere gestite le infor-
+mazioni principali quali titolo, cantante, genere, durata e anno di pub-
+blicazione. Un utente, successivamente, può collegarsi all’applicazione
+e modificare/cancellare playlist esistenti di cui è proprietario. Per ogni
+playlist un utente deve inserire una descrizione testuale e uno o più tag
+descrittivi.-->

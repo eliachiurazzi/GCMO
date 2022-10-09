@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <link rel="stylesheet" href="css/style.css">    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up</title>
+    <link rel="icon" href="img/title_logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body onload="get_token()" style ="background-color: #d1ffea">
+    <div id="login2" class="container-sm">
+      <img src="img/logo_gcmo.png"  style="width: 140px" class="center">
+      <span style="text-align: center;"><h4>Registrati a GCMO<sup>TM</sup> per gestire le tue playlist musicali!</h4></span>
+    </div>
+    <br>
+    <div id="login" class="container-sm">
+      <h3>Sign up</h3>
+      <form class="row g-3" onsubmit="save_data()" action="preferences.html">
+        <div id="alert_us" role="alert" style="display: none;">
+
+        </div>
+        <div class="mb-4" id="usernameForm">
+            <label for="usernameform" class="form-label">Username</label>
+            <input type="text" oninput="checkUser()" class="form-control" id="usernameform" required>
+          </div>
+          <div id="alert_email" role="alert" style="display: none;">
+
+        </div>
+        <div class="mb-4">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input type="email" oninput="checkEmail()" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+        </div>
+        <div id="alert_pwd" role="alert" style="display: none;">
+
+        </div>
+        <div class="mb-4">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" oninput="checkPassword()" class="form-control" id="exampleInputPassword1" required>
+        </div>
+        <button type="submit" onclick="checkAlerts(event)" class="btn btn-primary">Registrati</button><br><br>
+        <p>Hai già un account? <a href="login.html">Login</a></p>
+      </form>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="js/data_check_script.js"></script>
+  </body>
+
+</html>
+
+<!--L’applicazione prevede una fase di registrazione utente dove verranno
+collezionate informazioni quali nome utente, indirizzo email, password,
+preferenze musicali, gruppi preferiti.-->
