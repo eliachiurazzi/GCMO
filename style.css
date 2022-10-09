@@ -1,0 +1,66 @@
+#login {
+    border:3px solid rgb(0, 0, 0); 
+    padding: 1em;
+    border-radius: 25px;
+    clear:both;
+    width: 50%;
+    background-color: white;
+    margin-bottom: 20px;
+}
+#login2 { 
+    clear: both;
+    margin: auto;
+    width: 50%;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+#pref {
+    margin-top: 20px;
+    border:3px solid rgb(0, 0, 0); 
+    padding: 1em;
+    border-radius: 25px;
+    clear:both;
+    width: 60%;
+    background-color: white
+}
+#logo_navbar {
+    width: 100px;
+}
+
+.welcome_msg {
+    text-align:center;
+    font-size: 2em;
+    margin: 1em;
+    animation-name: graduale;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+@keyframes graduale {
+    0% {opacity: 0;}
+    25% {opacity: 0.2;}
+    50% {opacity: 0.5;}
+    75% {opacity: 0.7;}
+    100% {opacity: 1;}
+}
+
+.center-wide {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background-color:#d1ffea;
+  }
+
+.normal-row {
+    border-color: #d1ffea;
+}
+
+.bottone1 {
+    background-color: #d1ffea;
+    border-color: black;
+}
+
